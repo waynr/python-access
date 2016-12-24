@@ -8,12 +8,9 @@ test_access
 Tests for `access` module.
 """
 
-
-import sys
 import unittest
 
 from access import access
-
 
 
 class TestAccess(unittest.TestCase):
