@@ -29,7 +29,7 @@ setup(
         'access',
     ],
     package_dir={'access':
-                 'access'},
+                 'src/access'},
     include_package_data=True,
     install_requires=requirements,
     license="Apache Software License 2.0",
