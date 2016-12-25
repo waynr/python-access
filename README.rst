@@ -13,10 +13,6 @@ python-access
         :target: https://python-access.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/waynr/python-access/shield.svg
-     :target: https://pyup.io/repos/github/waynr/python-access/
-     :alt: Updates
-
 
 Provides Python member access control semantics using available Python 3 syntax.
 
