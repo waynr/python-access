@@ -23,8 +23,6 @@ matrix:
       env: TOXENV=py33
     - python: 2.7
       env: TOXENV=py27
-    - python: 2.6
-      env: TOXENV=py26
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip --cache-dir $HOME/.cache/pip install -r requirements_dev.txt
