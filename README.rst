@@ -13,6 +13,10 @@ python-access
         :target: https://python-access.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
+.. image:: https://coveralls.io/repos/github/waynr/python-access/badge.svg
+        :target: https://coveralls.io/github/waynr/python-access
+        :alt: Coveralls coverage status
+
 
 Provides Python member access control semantics using available Python 3 syntax.
 
