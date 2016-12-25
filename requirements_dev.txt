@@ -9,6 +9,7 @@ cryptography==1.7
 flake8~=3.2
 tox==2.3.1
 coverage==4.1
+coveralls~=1.1
 discover==0.4.0
 
 # used in travis_pypi_setup.py
