@@ -18,17 +18,17 @@ class Base:
     @access.private
     def do_a_private_thing(self):
         """Should raise AttributeError when called outside Base."""
-        return "teehee"
+        return "private response"
 
     @access.protected
     def do_a_protected_thing(self):
         """Should raise AttributeError when called outside Base or its sub
         classes."""
-        return "oh hello"
+        return "protected response"
 
     def do_a_public_thing(self):
         """Should be, like, totally fine all the time."""
-        return "meow"
+        return "public response"
 
     def do_a_private_thing_publicly(self):
         """Should be, like, totally fine all the time."""
@@ -63,7 +63,7 @@ class TestInstanceMethodAccessControl(testtools.TestCase):
     def test_public_default(self):
         """ validate implementation doesn't somehow break default public access
         """
-        self.assertEqual(self.baseclass.do_a_public_thing(), "meow")
+        self.assertEqual(self.baseclass.do_a_public_thing(), "public response")
 
 
 class TestPrivateInstanceMethodAccess(TestInstanceMethodAccessControl):
@@ -93,14 +93,15 @@ class TestPrivateInstanceMethodAccess(TestInstanceMethodAccessControl):
         its own private methods
         """
         self.assertEqual(self.baseclass.do_a_private_thing_publicly(),
-                         "teehee")
+                         "private response")
 
     def test_valid_from_public_method_called_by_subclass(self):
         """ validate implementation doesn't somehow break access to base class
         private method when called from within public method in turn called by
         sub class public method.
         """
-        self.assertEqual(self.subclass.do_a_private_thing_publicly(), "teehee")
+        self.assertEqual(self.subclass.do_a_private_thing_publicly(),
+                         "private response")
 
 
 class TestProtectedInstanceMethodAccess(TestInstanceMethodAccessControl):
@@ -126,7 +127,7 @@ class TestProtectedInstanceMethodAccess(TestInstanceMethodAccessControl):
         its own protected methods
         """
         self.assertEqual(self.baseclass.do_a_protected_thing_publicly(),
-                         "oh hello")
+                         "protected response")
 
     def test_valid_from_public_method_called_by_subclass(self):
         """ validate implementation doesn't somehow break access to base class
@@ -134,7 +135,7 @@ class TestProtectedInstanceMethodAccess(TestInstanceMethodAccessControl):
         by sub class public method.
         """
         self.assertEqual(self.subclass.do_a_protected_thing_publicly(),
-                         "oh hello")
+                         "protected response")
 
     def test_valid_from_protected_method_called_by_subclass(self):
         """ validate implementation doesn't somehow break access to base class
@@ -142,4 +143,4 @@ class TestProtectedInstanceMethodAccess(TestInstanceMethodAccessControl):
         by sub class public method.
         """
         self.assertEqual(self.subclass.do_another_protected_thing_publicly(),
-                         "oh hello")
+                         "protected response")
