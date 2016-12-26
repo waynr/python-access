@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 
 """
-test_access
+test_instance_method_access
 ----------------------------------
 
-Tests for `access` module.
+Tests for `access.private`, `access.protected`, and `access.public`.
 """
 
 import unittest
