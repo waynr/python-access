@@ -21,6 +21,7 @@ for line in sys.stdin:
 		print("%-20s %s" % (target, help))
 endef
 export PRINT_HELP_PYSCRIPT
+
 BROWSER := python -c "$$BROWSER_PYSCRIPT"
 
 help:
@@ -51,16 +52,13 @@ lint: ## check style with flake8
 	flake8 access tests
 
 test: ## run tests quickly with the default Python
-	
 		python setup.py test
 
 test-all: ## run tests on every Python version with tox
 	tox
 
 coverage: ## check code coverage quickly with the default Python
-	
-		coverage run --source access setup.py test
-	
+		coverage run --source src/access setup.py test
 		coverage report -m
 		coverage html
 		$(BROWSER) htmlcov/index.html
