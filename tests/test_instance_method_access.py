@@ -100,3 +100,42 @@ class TestPrivateInstanceMethodAccess(TestInstanceMethodAccessControl):
         sub class public method.
         """
         self.assertEqual(self.s.do_a_private_thing_publicly(), "teehee")
+
+
+class TestProtectedInstanceMethodAccess(TestInstanceMethodAccessControl):
+
+    def test_raises_from_outside_class_scope(self):
+        """ validate AttributeError raised when attempting to access a
+        protected method directly from outside class scope
+        """
+        with testtools.ExpectedException(AttributeError,
+                                         ".*has no attribute.*"):
+            self.b.do_a_protected_thing()
+
+    def test_raises_from_subclass(self):
+        """ validate AttributeError raised when attempting to access a
+        protected method directly from subclass scope
+        """
+        with testtools.ExpectedException(AttributeError,
+                                         ".*has no attribute.*"):
+            self.s.do_a_protected_thing()
+
+    def test_valid_from_within_class(self):
+        """ validate implementation doesn't somehow break base class access to
+        its own protected methods
+        """
+        self.assertEqual(self.b.do_a_protected_thing_publicly(), "oh hello")
+
+    def test_valid_from_public_method_called_by_subclass(self):
+        """ validate implementation doesn't somehow break access to base class
+        protected method when called from within public method in turn called
+        by sub class public method.
+        """
+        self.assertEqual(self.s.do_a_protected_thing_publicly(), "oh hello")
+
+    def test_valid_from_protected_method_called_by_subclass(self):
+        """ validate implementation doesn't somehow break access to base class
+        protected method when called from within public method in turn called
+        by sub class public method.
+        """
+        self.assertEqual(self.s.do_another_protected_thing_publicly(), "oh hello")
