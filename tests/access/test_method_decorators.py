@@ -2,10 +2,13 @@
 # -*- coding: utf-8 -*-
 
 """
-test_instance_method_access
-----------------------------------
+test_method_decorators
+----------------------
 
-Tests for `access.private`, `access.protected`, and `access.public`.
+Tests for `access.private`, `access.protected`, and `access.public` decorators.
+All tests in this module assume that the default behavior of an undecorated
+method is to permit methods to be accessible on the object from any context.
+
 """
 
 import testtools
