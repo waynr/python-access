@@ -112,7 +112,7 @@ class TestBaseClassExceptions(TestInvalidAccess):
         ]
 
 
-class TestValideSubClassAccess(TestValidAccess):
+class TestValidSubClassAccess(TestValidAccess):
     scenarios = [
         ("validate_explicitly_public_method_from_subclass",
          {"method_name": "do_a_public_thing",
@@ -136,7 +136,7 @@ class TestValideSubClassAccess(TestValidAccess):
     ]
 
 
-class TestValideBaseClassAccess(TestValidAccess):
+class TestValidBaseClassAccess(TestValidAccess):
 
     scenarios = [
         ("validate_explicitly_public_method",
