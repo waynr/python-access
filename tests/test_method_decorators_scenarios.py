@@ -15,7 +15,7 @@ import inspect
 
 import access
 
-from tests.access.base import TestValidAccess, TestInvalidAccess
+from tests.base import TestValidAccess, TestInvalidAccess
 
 
 def get_current_function_name():
