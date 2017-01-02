@@ -24,7 +24,7 @@ class PrivateBase:
     def do_a_protected_thing(self):
         """Should raise AttributeError when called outside Base or its sub
         classes."""
-        return "% response" % get_current_function_name()
+        return "%s response" % get_current_function_name()
 
     @access.public
     def do_a_public_thing(self):
