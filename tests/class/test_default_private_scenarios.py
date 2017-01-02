@@ -38,12 +38,12 @@ class PrivateBase:
 
 class PrivateSub(PrivateBase):
 
-    def do_another_public_thing():
+    def do_another_public_thing(self):
         """Should be, like, totally fine all the time."""
         return "%s response" % get_current_function_name()
 
     @access.private
-    def do_another_private_thing():
+    def do_another_private_thing(self):
         """Should raise AttributeError when called outside Base or its sub
         classes."""
         return "%s response" % get_current_function_name()
