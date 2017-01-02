@@ -11,16 +11,10 @@ method is to permit methods to be accessible on the object from any context.
 
 """
 
-import inspect
-
 import access
 
 from tests.base import TestValidAccess, TestInvalidAccess
-
-
-def get_current_function_name():
-    outer_frame = inspect.stack[1]
-    return outer_frame.__name__
+from tests.utils import get_current_function_name
 
 
 class Base:

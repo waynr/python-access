@@ -8,15 +8,9 @@ test_default_private
 Tests for `access.default(access.PRIVATE)` class decorator.
 """
 
-import inspect
-
 import access
 from tests.base import TestValidAccess, TestInvalidAccess
-
-
-def get_current_function_name():
-    outer_frame = inspect.stack[1]
-    return outer_frame.__name__
+from tests.utils import get_current_function_name
 
 
 @access.default(access.PRIVATE)
