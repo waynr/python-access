@@ -69,6 +69,9 @@ class SubTwo(Base):
 
 class TestValidBaseClassAccess(TestValidAccess):
 
+    def test_scenario(self):
+        self.scenario()
+
     scenarios = [
         ("validate_explicitly_public_method",
          {"method_name": "do_a_public_thing",
@@ -93,6 +96,9 @@ class TestValidBaseClassAccess(TestValidAccess):
 
 class TestInvalidBaseClassAccess(TestInvalidAccess):
 
+    def test_scenario(self):
+        self.scenario()
+
     scenarios = [
         ("private_method_inaccessible",
          {"method_name": "do_a_private_thing",
@@ -110,6 +116,9 @@ class TestInvalidBaseClassAccess(TestInvalidAccess):
 
 
 class TestValidSubClassAccess(TestValidAccess):
+
+    def test_scenario(self):
+        self.scenario()
 
     scenarios = [
         ("validate_public_method_call_private_method",
@@ -134,6 +143,9 @@ class TestValidSubClassAccess(TestValidAccess):
 
 
 class TestInvalidSubClassAccess(TestInvalidAccess):
+
+    def test_scenario(self):
+        self.scenario()
 
     scenarios = [
         ("base_private_method_inaccessible_from_outside_subclass",

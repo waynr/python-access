@@ -66,6 +66,9 @@ class PrivateSub(PrivateBase):
 
 class TestSubClassExceptions(TestInvalidAccess):
 
+    def test_scenario(self):
+        self.scenario()
+
     scenarios = [
         ("methods_private_by_default_from_subclass",
          {"method_name": "do_a_private_thing",
@@ -96,6 +99,9 @@ class TestSubClassExceptions(TestInvalidAccess):
 
 class TestBaseClassExceptions(TestInvalidAccess):
 
+    def test_scenario(self):
+        self.scenario()
+
     scenarios = [
         ("methods_private_by_default",
          {"method_name": "do_a_private_thing",
@@ -113,6 +119,10 @@ class TestBaseClassExceptions(TestInvalidAccess):
 
 
 class TestValidSubClassAccess(TestValidAccess):
+
+    def test_scenario(self):
+        self.scenario()
+
     scenarios = [
         ("validate_explicitly_public_method_from_subclass",
          {"method_name": "do_a_public_thing",
@@ -137,6 +147,9 @@ class TestValidSubClassAccess(TestValidAccess):
 
 
 class TestValidBaseClassAccess(TestValidAccess):
+
+    def test_scenario(self):
+        self.scenario()
 
     scenarios = [
         ("validate_explicitly_public_method",

@@ -14,7 +14,7 @@ from testscenarios.testcase import TestWithScenarios
 
 class TestValidAccess(TestWithScenarios,
                       testtools.TestCase):
-    def test_scenario(self):
+    def scenario(self):
         instance = self.fixture_class()
         method = getattr(instance, self.method_name)
 
@@ -22,7 +22,7 @@ class TestValidAccess(TestWithScenarios,
 
 
 class TestInvalidAccess(TestWithScenarios, testtools.TestCase):
-    def test_scenario(self):
+    def scenario(self):
         instance = self.fixture_class()
         method = getattr(instance, self.method_name)
 
