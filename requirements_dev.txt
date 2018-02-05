@@ -17,4 +17,4 @@ PyYAML==3.12
 
 # doc-related
 docutils==0.13.1
-Sphinx==1.6.2
+Sphinx==1.6.7
