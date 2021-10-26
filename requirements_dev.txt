@@ -16,5 +16,5 @@ discover==0.4.0
 PyYAML==3.12
 
 # doc-related
-docutils==0.13.1
+docutils==0.18
 Sphinx==1.6.2
