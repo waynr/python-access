@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from setuptools import find_packages
 from setuptools import setup
 
 with open('README.rst') as readme_file:
@@ -25,11 +26,8 @@ setup(
     author="Wayne Warren",
     author_email='waynr+python-access@sdf.org',
     url='https://github.com/waynr/access',
-    packages=[
-        'access',
-    ],
-    package_dir={'access':
-                 'src/access'},
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
     include_package_data=True,
     install_requires=requirements,
     license="Apache Software License 2.0",
